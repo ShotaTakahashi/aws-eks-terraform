@@ -19,7 +19,7 @@ resource "aws_security_group" "cluster" {
 #           to the Kubernetes. You will need to replace A.B.C.D below with
 #           your real IP. Services like icanhazip.com can help you find this.
 resource "aws_security_group_rule" "cluster-ingress-workstation-https" {
-  cidr_blocks       = ["${var.home-ip}"]
+  cidr_blocks       = ["${var.my-ip}"]
   description       = "Allow workstation to communicate with the cluster API Server"
   from_port         = 443
   protocol          = "tcp"
@@ -44,7 +44,7 @@ resource "aws_security_group" "node" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = ["${var.home-ip}"]
+    cidr_blocks = ["${var.my-ip}"]
   }
 
   tags = "${

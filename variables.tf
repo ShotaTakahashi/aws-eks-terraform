@@ -9,4 +9,4 @@ variable "cluster-name" {
 
 variable "key-name" {}
 variable "public-key-path" {}
-variable "home-ip" {}
+variable "my-ip" {}
