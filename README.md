@@ -1,5 +1,6 @@
 # aws-eks-terraform
-This repo is made for designing-destributed-systems book so the name in some files is "designing-destributed-systems"
+This repo is made for designing-destributed-systems book so the name in some files is "designing-destributed-systems".
+
 You can access nodes using SSH.
 You should prepare *.tfvars file.
 For example:
