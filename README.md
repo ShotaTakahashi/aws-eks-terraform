@@ -9,7 +9,7 @@ public-key-path = "~/.ssh/my_key.pub"
 my-ip           = "XXX.XXX.XXX.XXX/32"
 ```
 
-If you set up this, you run:
+If you want to set up these, you run:
 
 ```
 $ terraform init # not necessary
@@ -18,7 +18,7 @@ $ terraform apply -var-file="terraform.tfvars"
 ...
 ```
 
-If you remove it, you run:
+If you want to remove them, you run:
 ```
 $ terraform destroy
 ```
