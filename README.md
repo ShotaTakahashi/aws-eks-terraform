@@ -17,7 +17,7 @@ If you want to set up these, you run:
 ```
 $ terraform init # not necessary
 ...
-$ terraform apply -var-file="terraform.tfvars"
+$ terraform apply -var-file=terraform.tfvars
 ...
 ```
 
@@ -27,10 +27,10 @@ $ terraform destroy
 ```
 
 ## Key
-It is easy.
+If you want to access nodes using ssh, you should make each private and public key, but it is easy. \
 First, make a private key.\
 Second, make a public key using the private key.\
-Finally, add the name of key to *.tfvars file.
+Finally, add the name and path of key to *.tfvars file.
 
 ```
 $ ssh-keygen -t rsa
@@ -39,3 +39,11 @@ Enter file in which to save the key (/Users/username/.ssh/id_rsa): /Users/userna
 ...
 $ ssh-keygen -y -f ~/.ssh/my_key > my_key.pub
 ```
+
+In this example, the name of key is "my_key" and  \
+the path of key is 
+- "/Users/username/.ssh/my_key", 
+- "~/.ssh/my_key" or 
+- "$HOME/.ssh/my_key".
+
+(Anything you like!)
