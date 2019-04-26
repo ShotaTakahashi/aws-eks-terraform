@@ -40,13 +40,6 @@ resource "aws_security_group" "node" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["${var.my-ip}"]
-  }
-
   tags = "${
     map(
      "Name", "terraform-eks-node",
@@ -83,4 +76,14 @@ resource "aws_security_group_rule" "cluster-ingress-node-https" {
   source_security_group_id = "${aws_security_group.node.id}"
   to_port                  = 443
   type                     = "ingress"
+}
+
+resource "aws_security_group_rule" "node-ingress-ssh" {
+  cidr_blocks       = ["${var.my-ip}"]
+  description       = "Allow ssh connection"
+  from_port         = 22
+  protocol          = "tcp"
+  security_group_id = "${aws_security_group.node.id}"
+  to_port           = 22
+  type              = "ingress"
 }
