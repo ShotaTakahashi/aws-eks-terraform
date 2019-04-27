@@ -42,8 +42,9 @@ $ ssh-keygen -y -f ~/.ssh/my_key > my_key.pub
 
 In this example, the name of key is "my_key" and  \
 the path of key is 
-- "/Users/username/.ssh/my_key", 
-- "~/.ssh/my_key" or 
-- "$HOME/.ssh/my_key".
+- "/Users/username/.ssh/my_key.pub", 
+- "~/.ssh/my_key.pub" or 
+- "$HOME/.ssh/my_key.pub".
 
+You should include them in *.tfvars.
 (Anything you like!)
